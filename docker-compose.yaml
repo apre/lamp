@@ -7,6 +7,9 @@ services:
             - "80:80"
         volumes:
             - ./www:/var/www/html
+            - ./cache:/var/www/html/cache:Z
+            - ./config/php.ini:/usr/local/etc/php/conf.d/90-php.ini
+            - ./config/envvars:/etc/apache2/envvars
         links:
             - db:db
     db:
