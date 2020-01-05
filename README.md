@@ -19,6 +19,7 @@ apt install docker.io docker-compose
 start the _lamp_ stack with:
 
 ```
+docker build -t php-mysqli -f php-mysqli/Dockerfile.php php-mysqli
 docker-compose up
 ```
 

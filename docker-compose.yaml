@@ -2,7 +2,7 @@ version: '2'
 
 services:
     web:
-        image: lavoweb/php-7.3
+        image: php-mysqli
         ports:
             - "80:80"
         volumes:
@@ -24,5 +24,11 @@ services:
         image: phpmyadmin/phpmyadmin
         ports:
             - "8080:80"
+        links:
+            - db:db
+    adminer:
+        image: adminer
+        ports:
+            - "8081:8080"
         links:
             - db:db
